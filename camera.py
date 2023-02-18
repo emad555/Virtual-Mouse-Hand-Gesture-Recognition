@@ -127,8 +127,8 @@ class VideoCamera(object):
                 x3 = numpy.interp(x1, (75, 640 - 75), (0, wScr))  # Converts the width of the window relative to the screen width
                 y3 = numpy.interp(y1, (75, 480 - 75), (0, hScr))  # Converts the height of the window relative to the screen height
                 
-                cX = pX + (x3 - pX) / 2  # Stores previous x locations to update current x location
-                cY = pY + (y3 - pY) / 2  # Stores previous y locations to update current y location
+                cX = pX + (x3 - pX) / 1.01  # Stores previous x locations to update current x location
+                cY = pY + (y3 - pY) / 1.001  # Stores previous y locations to update current y location
                 
                 autopy.mouse.move(wScr-cX, cY)  # Function to move the mouse to the x3 and y3 values (wSrc inverts the direction)
                 pX, pY = cX, cY  # Stores the current x and y location as previous x and y location for next loop
